@@ -12,4 +12,16 @@ export class SelectModeComponent implements OnInit {
   ngOnInit() {
   }
 
+  mode2x2(): void {
+    console.log('2x2');
+  }
+
+  mode3x3(): void {
+    console.log('3x3');
+  }
+
+  modeGC(): void{
+    console.log('gc');
+  }
+
 }

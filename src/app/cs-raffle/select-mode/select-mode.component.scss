@@ -8,4 +8,17 @@ section {
     -moz-background-size: cover;    /* Mozilla*/
     -o-background-size: cover;      /* Opera*/
     background-size: cover;         /* Generic*/
+
+    div {
+      padding-top: 20px;
+      padding-left: 150px;
+
+      img {
+        cursor: pointer;
+      }
+
+      img:hover {
+        opacity: 0.9;
+      }
+  }
 }

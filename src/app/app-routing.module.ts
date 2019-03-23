@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule'},
-  { path: '', redirectTo: '/welcome', pathMatch: 'full'}
+  { path: 'select-mode', loadChildren: './cs-raffle/cs-raffle.module#CsRaffleModule'},
+  { path: '', redirectTo: '/select-mode', pathMatch: 'full'}
 ];
 
 @NgModule({
