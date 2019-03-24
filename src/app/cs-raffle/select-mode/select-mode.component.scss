@@ -1,24 +1,24 @@
 section {
-    position: relative;
-    top: -4px;
-    height: 100vw;
-    background: url("../../../assets/images/main.jpg") no-repeat center center fixed;
-    background-size: cover;
-    -webkit-background-size: cover; /* For WebKit*/
-    -moz-background-size: cover;    /* Mozilla*/
-    -o-background-size: cover;      /* Opera*/
-    background-size: cover;         /* Generic*/
+  position: relative;
+  top: -4px;
+  height: 100vw;
+  //background: url("../../../assets/images/main.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover; /* Mozilla*/
+  -o-background-size: cover; /* Opera*/
+  background-size: cover; /* Generic*/
 
-    div {
-      padding-top: 20px;
-      padding-left: 150px;
+  div {
+    padding-top: 20px;
+    padding-left: 150px;
 
-      img {
-        cursor: pointer;
-      }
+    img {
+      cursor: pointer;
+    }
 
-      img:hover {
-        opacity: 0.9;
-      }
+    img:hover {
+      opacity: 0.9;
+    }
   }
 }
