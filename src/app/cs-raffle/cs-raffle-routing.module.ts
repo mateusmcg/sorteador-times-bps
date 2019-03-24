@@ -6,10 +6,10 @@ import { X3Component } from './x3/x3.component';
 import { GcComponent } from './gc/gc.component';
 
 const routes: Routes = [
-  { path: '', component: SelectModeComponent },
-  { path: 'x2', component: X2Component },
-  { path: 'x3', component: X3Component },
-  { path: 'gc', component: GcComponent }
+  { path: '', component: SelectModeComponent, data: { animation: 'select-mode' } },
+  { path: 'x2', component: X2Component, data: { animation: 'x2' } },
+  { path: 'x3', component: X3Component, data: { animation: 'x3' } },
+  { path: 'gc', component: GcComponent, data: { animation: 'gc' } }
 ];
 
 @NgModule({
