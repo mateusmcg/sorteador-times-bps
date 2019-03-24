@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material';
 import { Player } from '../player.model';
 import { Guid } from 'guid-typescript';
@@ -9,12 +9,17 @@ import { Guid } from 'guid-typescript';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
+  @Output()
+  public onSortPlayers: EventEmitter<Player[]>;
+
   private selectedPlayers: Player[];
 
   public players: Player[];
   public newPlayerName: string;
 
-  constructor() {}
+  constructor() {
+    this.onSortPlayers = new EventEmitter<Player[]>();
+  }
 
   ngOnInit() {
     this.selectedPlayers = [];
@@ -49,5 +54,9 @@ export class PlayersComponent implements OnInit {
       id: Guid.create(),
       name: this.newPlayerName
     } as Player);
+  }
+
+  public sortPlayers(): void {
+    this.onSortPlayers.emit(this.selectedPlayers);
   }
 }

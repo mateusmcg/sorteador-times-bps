@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../shared/player.model';
 
 @Component({
   selector: 'bps-x2',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./x2.component.scss']
 })
 export class X2Component implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  public onSortPlayers(players: Player[]): void {
+    console.debug('x2', players);
   }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../shared/player.model';
 
 @Component({
   selector: 'bps-gc',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gc.component.scss']
 })
 export class GcComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  public onSortPlayers(players: Player[]): void {
+    console.debug('gc', players);
   }
-
 }
