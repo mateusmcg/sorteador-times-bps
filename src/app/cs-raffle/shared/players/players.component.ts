@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material';
 import { Player } from '../player.model';
 import { Guid } from 'guid-typescript';
+import { MatchStateService } from '../../match/match-state.service';
+import { PlayersStateService } from '../players-state.service';
 
 @Component({
   selector: 'bps-players',
@@ -9,54 +11,36 @@ import { Guid } from 'guid-typescript';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
+
+  // tslint:disable-next-line: no-output-on-prefix
   @Output()
   public onSortPlayers: EventEmitter<Player[]>;
-
-  private selectedPlayers: Player[];
 
   public players: Player[];
   public newPlayerName: string;
 
-  constructor() {
+  constructor(private playersStateService: PlayersStateService) {
     this.onSortPlayers = new EventEmitter<Player[]>();
   }
 
-  ngOnInit() {
-    this.selectedPlayers = [];
-
-    this.players = [
-      { id: Guid.create(), name: 'Bob' },
-      { id: Guid.create(), name: 'Vuti' },
-      { id: Guid.create(), name: 'Cerqueira' },
-      { id: Guid.create(), name: 'Blindão' },
-      { id: Guid.create(), name: 'Brunão' },
-      { id: Guid.create(), name: 'Breno' },
-      { id: Guid.create(), name: 'Beto' },
-      { id: Guid.create(), name: 'Passos' },
-      { id: Guid.create(), name: 'Zille' },
-      { id: Guid.create(), name: 'Primo' },
-      { id: Guid.create(), name: 'Recchi' }
-    ];
+  public ngOnInit(): void {
+    this.players = this.playersStateService.players;
   }
 
   public onCheckedChange(evt: MatCheckboxChange, player: Player): void {
-    if (evt.checked) {
-      this.selectedPlayers.push(player);
-      return;
-    }
-
-    const index = this.selectedPlayers.indexOf(player);
-    this.selectedPlayers.splice(index, 1);
+    player.isSelected = evt.checked;
   }
 
   public addPlayer(): void {
     this.players.push({
       id: Guid.create(),
-      name: this.newPlayerName
+      name: this.newPlayerName,
+      isSelected: false
     } as Player);
   }
 
   public sortPlayers(): void {
-    this.onSortPlayers.emit(this.selectedPlayers);
+    this.playersStateService.players = this.players;
+    this.onSortPlayers.emit(this.players.filter(p => p.isSelected));
   }
 }

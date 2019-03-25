@@ -3,7 +3,8 @@
     <mat-checkbox
       *ngFor="let player of players"
       fxFlex="20"
-      (change)="onCheckedChange($event, player)">
+      (change)="onCheckedChange($event, player)"
+      [checked]="player.isSelected">
       {{ player.name }}
     </mat-checkbox>
   </div>
