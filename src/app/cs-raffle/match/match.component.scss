@@ -1,0 +1,19 @@
+section {
+  padding-top: 50px;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-weight: bold;
+
+  img {
+    width: 96px;
+    height: 96px;
+  }
+
+  button[mat-raised-button] {
+    margin: 10px;
+  }
+
+  bps-go-back {
+    padding-right: 5px;
+  }
+}

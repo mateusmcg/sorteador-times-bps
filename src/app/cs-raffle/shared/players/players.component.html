@@ -1,25 +1,24 @@
-<section
-  fxLayout="column"
-  fxLayoutAlign="space-between"
-  fxLayoutWrap
-  fxLayoutGap="10px"
->
-  <ng-container *ngFor="let player of players">
-    <div>
-      <mat-checkbox fxFlex="25%" (change)="onCheckedChange($event, player)">{{
-        player.name
-      }}</mat-checkbox>
-    </div>
-  </ng-container>
-  <div>
-    <mat-form-field>
-      <input matInput [(ngModel)]="newPlayerName" placeholder="Add player" />
-    </mat-form-field>
-    <button mat-icon-button (click)="addPlayer()">
-      <mat-icon>add_circle_outline</mat-icon>
-    </button>
+<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
+  <div fxLayout="row wrap" class="players-container">
+    <mat-checkbox
+      *ngFor="let player of players"
+      fxFlex="20"
+      (change)="onCheckedChange($event, player)">
+      {{ player.name }}
+    </mat-checkbox>
   </div>
-  <div>
-    <button mat-button (click)="sortPlayers()">Play!</button>
+  <div fxLayout="column"  fxFlex="20">
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="newPlayerName" placeholder="Add player" />
+      </mat-form-field>
+      <button mat-icon-button (click)="addPlayer()">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </div>
+    <div>
+      <bps-go-back></bps-go-back>
+      <button mat-button (click)="sortPlayers()">Play!</button>
+    </div>
   </div>
 </section>

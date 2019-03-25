@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -6,9 +6,8 @@ import { Location } from '@angular/common';
   templateUrl: './go-back.component.html',
   styleUrls: ['./go-back.component.scss']
 })
-export class GoBackComponent{
-
-  constructor(private location: Location) { }
+export class GoBackComponent {
+  constructor(private location: Location) {}
 
   goBack(): void {
     this.location.back();

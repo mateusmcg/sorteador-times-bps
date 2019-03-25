@@ -8,9 +8,10 @@ import { X3Component } from './x3/x3.component';
 import { GcComponent } from './gc/gc.component';
 import { GoBackComponent } from './shared/go-back/go-back.component';
 import { PlayersComponent } from './shared/players/players.component';
+import { MatchComponent } from './match/match.component';
 
 @NgModule({
-  declarations: [SelectModeComponent, X2Component, X3Component, GcComponent, GoBackComponent, PlayersComponent],
+  declarations: [SelectModeComponent, X2Component, X3Component, GcComponent, GoBackComponent, PlayersComponent, MatchComponent],
   imports: [
     CsRaffleRoutingModule,
     SharedModule

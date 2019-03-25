@@ -1,0 +1,17 @@
+<section fxLayout="row" fxLayoutAlign="space-evenly">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <img src="../../../assets/images/ct.png" alt="CT" />
+    <span *ngFor="let player of match.CT">{{ player.name }}</span>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <img src="../../../assets/images/tr.jpg" alt="TR" />
+    <span *ngFor="let player of match.TR">{{ player.name }}</span>
+  </div>
+</section>
+<section fxLayout="row" fxLayoutAlign="center center">
+  <button mat-raised-button [routerLink]="['', 'select-mode']">Start Over</button>
+  <bps-go-back></bps-go-back> |
+  <button mat-icon-button matTooltip="Copy Match">
+    <mat-icon>file_copy</mat-icon>
+  </button>
+</section>

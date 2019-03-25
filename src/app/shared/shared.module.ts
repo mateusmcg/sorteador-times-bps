@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCheckboxModule, MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
+import { MatCheckboxModule, MatButtonModule, MatIconModule, MatInputModule, MatTooltipModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
   exports: [
     CommonModule,
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ]
 })
 export class SharedModule { }
