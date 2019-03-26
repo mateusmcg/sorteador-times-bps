@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "sorteador-times-bps",
+    "bps": "sorteador-times-bps"
+  }
+}
