@@ -1,4 +1,6 @@
-<bps-header></bps-header>
-<main [@routeAnimations]="prepareRoute(outlet)">
-  <router-outlet #outlet="outlet"></router-outlet>
-</main>
+<section fxLayout="row">
+  <bps-header fxFlex="100"></bps-header>
+  <main fxFlex="100" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </main>
+</section>

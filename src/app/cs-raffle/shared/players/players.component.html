@@ -1,14 +1,15 @@
 <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-  <div fxLayout="row wrap" class="players-container">
+  <div fxLayout="row wrap" fxLayout.xs="column wrap" class="players-container">
     <mat-checkbox
       *ngFor="let player of players"
       fxFlex="20"
+      fxFlex.xs="50"
       (change)="onCheckedChange($event, player)"
       [checked]="player.isSelected">
       {{ player.name }}
     </mat-checkbox>
   </div>
-  <div fxLayout="column"  fxFlex="20">
+  <div fxLayout="column" fxFlex="20">
     <div>
       <mat-form-field>
         <input matInput [(ngModel)]="newPlayerName" placeholder="Add player" />
