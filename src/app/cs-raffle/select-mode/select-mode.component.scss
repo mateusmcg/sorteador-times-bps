@@ -1,11 +1,10 @@
-section {
   div {
     img {
       cursor: pointer;
+      max-width: 100%;
     }
 
     img:hover {
       opacity: 0.9;
     }
   }
-}

@@ -1,25 +1,20 @@
-<section>
-  <div fxLayout="column" fxLayoutAlign="center start">
-    <img
-      src="../../../assets/images/campeonato-2x2.jpg"
-      alt="2x2"
-      (click)="mode2x2()"
-      [routerLink]="['x2']"
-      fxFlex="100"
-    />
-    <img
-      src="../../../assets/images/campeonato-3x3.jpg"
-      alt="3x3"
-      (click)="mode3x3()"
-      [routerLink]="['x3']"
-      fxFlex="100"
-    />
-    <img
-      src="../../../assets/images/comp-gc.jpg"
-      alt="gc"
-      (click)="modeGC()"
-      [routerLink]="['gc']"
-      fxFlex="100"
-    />
-  </div>
-</section>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start center" fxFlexFill>
+  <img
+    src="../../../assets/images/campeonato-2x2.jpg"
+    alt="2x2"
+    (click)="mode2x2()"
+    [routerLink]="['x2']"
+  />
+  <img
+    src="../../../assets/images/campeonato-3x3.jpg"
+    alt="3x3"
+    (click)="mode3x3()"
+    [routerLink]="['x3']"
+  />
+  <img
+    src="../../../assets/images/comp-gc.jpg"
+    alt="gc"
+    (click)="modeGC()"
+    [routerLink]="['gc']"
+  />
+</div>
