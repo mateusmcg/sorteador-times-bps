@@ -11,7 +11,7 @@
 <section fxLayout="row" fxLayoutAlign="center center">
   <button mat-raised-button [routerLink]="['', 'select-mode']">Start Over</button>
   <bps-go-back></bps-go-back> |
-  <button mat-icon-button matTooltip="Copy Match" (click)="copyToClipboard()">
+  <button type="button" mat-icon-button matTooltip="Copy Match" (click)="copyToClipboard()">
     <mat-icon>file_copy</mat-icon>
   </button>
 </section>
