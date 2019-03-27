@@ -1,6 +1,6 @@
 {
   "name": "sorteador-times-bps",
-  "version": "0.0.0",
+  "version": "v1.1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --configuration=production",
-    "deploy": "npm run build:prod && firebase --project bps -m \"v1.0.0\" deploy --only hosting"
+    "deploy": "npm run build:prod && firebase --project bps -m \"v1.1.1\" deploy --only hosting"
   },
   "private": true,
   "dependencies": {
