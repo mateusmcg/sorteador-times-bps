@@ -1,9 +1,9 @@
 <section fxLayout="column" fxLayoutAlign="center center">
   <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center stretch" fxFlexFill>
-    <bps-players fxFlex="100" fxFlex.xs="100"></bps-players>
+    <bps-maps fxFlex="100" fxFlex.xs="100" [maps]="maps"></bps-maps>
   </section>
   <section class="buttons">
     <bps-go-back></bps-go-back>
-    <button mat-button (click)="generateMatch()">Play!</button>
+    <button mat-button (click)="sortMaps()">Play!</button>
   </section>
 </section>

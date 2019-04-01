@@ -1,10 +1,12 @@
-<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-  <div fxLayout="row wrap" class="players-container" fxLayoutAlign="start center">
+<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" fxFlexFill>
+  <h2 ngClass.xs="title">PLAYERS</h2>
+  <div fxLayout="row wrap">
     <mat-checkbox
       *ngFor="let player of players"
-      fxFlex="20"
+      fxFlex="25"
       fxFlexOffset.xs="15%"
       fxFlex.xs="35"
+      fxFlex.sm="33"
       (change)="onCheckedChange($event, player)"
       [checked]="player.isSelected">
       {{ player.name }}
@@ -18,10 +20,6 @@
       <button mat-icon-button (click)="addPlayer()">
         <mat-icon>add_circle_outline</mat-icon>
       </button>
-    </div>
-    <div fxFlex="100" fxLayoutAlign="center center">
-      <bps-go-back></bps-go-back>
-      <button mat-button (click)="sortPlayers()">Play!</button>
     </div>
   </div>
 </section>

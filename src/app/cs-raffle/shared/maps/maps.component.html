@@ -1,0 +1,23 @@
+<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" fxFlexFill>
+  <h2 ngClass.xs="title">MAPS</h2>
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="1%">
+    <mat-card fxFlex="15%" fxFlex.xs="99%" fxFlex.sm="48%" fxFlex.md="30%" *ngFor="let map of maps">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-checkbox (change)="onCheckedChange($event, map)" [checked]="map.isSelected">{{ map.name }}</mat-checkbox>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{ map.imgUrl }}" height="100%" width="100%" alt="Photo of a Shiba Inu">
+    </mat-card>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex="100" fxLayoutAlign="center center">
+      <mat-form-field>
+        <input matInput [(ngModel)]="newMapName" placeholder="Add map" />
+      </mat-form-field>
+      <button mat-icon-button (click)="addMap()">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </div>
+  </div>
+</section>

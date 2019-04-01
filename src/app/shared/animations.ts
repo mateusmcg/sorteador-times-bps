@@ -31,7 +31,9 @@ export const slideInAnimation =
     transition('select-mode => x2', transitionForward),
     transition('select-mode => x3', transitionForward),
     transition('select-mode => gc', transitionForward),
+    transition('select-mode => maps', transitionForward),
     transition('match => x2', transitionBackwards),
     transition('match => x3', transitionBackwards),
     transition('match => gc', transitionBackwards),
+    transition('match => maps', transitionBackwards),
   ]);

@@ -9,12 +9,21 @@ import { GcComponent } from './gc/gc.component';
 import { GoBackComponent } from './shared/go-back/go-back.component';
 import { PlayersComponent } from './shared/players/players.component';
 import { MatchComponent } from './match/match.component';
+import { MapsComponent } from './shared/maps/maps.component';
+import { MapsPageComponent } from './maps-page/maps-page.component';
 
 @NgModule({
-  declarations: [SelectModeComponent, X2Component, X3Component, GcComponent, GoBackComponent, PlayersComponent, MatchComponent],
-  imports: [
-    CsRaffleRoutingModule,
-    SharedModule
-  ]
+  declarations: [
+    SelectModeComponent,
+    X2Component,
+    X3Component,
+    GcComponent,
+    GoBackComponent,
+    PlayersComponent,
+    MatchComponent,
+    MapsComponent,
+    MapsPageComponent
+  ],
+  imports: [CsRaffleRoutingModule, SharedModule]
 })
-export class CsRaffleModule { }
+export class CsRaffleModule {}

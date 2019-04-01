@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersStateService } from '../shared/players-state.service';
+import { MapsStateService } from '../shared/maps-state.service';
 
 @Component({
   selector: 'bps-select-mode',
@@ -8,10 +9,11 @@ import { PlayersStateService } from '../shared/players-state.service';
 })
 export class SelectModeComponent implements OnInit {
 
-  constructor(private playersStateService: PlayersStateService) { }
+  constructor(private playersStateService: PlayersStateService, private mapsStateService: MapsStateService) { }
 
   ngOnInit() {
     this.playersStateService.clearState();
+    this.mapsStateService.clearState();
   }
 
   mode2x2(): void {
@@ -24,6 +26,10 @@ export class SelectModeComponent implements OnInit {
 
   modeGC(): void{
     console.log('gc');
+  }
+
+  modeMaps(): void{
+    console.log('maps');
   }
 
 }

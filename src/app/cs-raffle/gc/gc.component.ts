@@ -6,6 +6,9 @@ import { SortService } from '../shared/sort/sort.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { MatchStateService } from '../match/match-state.service';
 import { MatSnackBar } from '@angular/material';
+import { Map, MAPS } from '../shared/map.model';
+import { PlayersStateService } from '../shared/players-state.service';
+import { MapsStateService } from '../shared/maps-state.service';
 
 @Component({
   selector: 'bps-gc',
@@ -13,23 +16,32 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./gc.component.scss']
 })
 export class GcComponent implements OnInit {
+  public maps: Map[];
+
   constructor(
     private validator: ValidatorService,
     private sortService: SortService,
     private matchStateService: MatchStateService,
+    private playersStateService: PlayersStateService,
+    private mapsStateService: MapsStateService,
     private router: Router,
     private snackBar: MatSnackBar
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.maps = [MAPS.DE_DUST_2, MAPS.DE_CACHE, MAPS.DE_OVERPASS, MAPS.DE_NUKE, MAPS.DE_MIRAGE, MAPS.DE_TRAIN, MAPS.DE_INFERNO];
+  }
 
-  public onSortPlayers(players: Player[]): void {
-    const validator = this.validator.validatePlayers(GameMode.GC, players);
+  public generateMatch(): void {
+    const selectedPlayers = this.playersStateService.players.filter(p => p.isSelected);
+    const selectedMaps = this.mapsStateService.maps.filter(m => m.isSelected);
+
+    const validator = this.validator.validatePlayers(GameMode.GC, selectedPlayers);
 
     if (validator.isValid) {
       this.matchStateService.match = this.sortService.sortPlayers(
         GameMode.GC,
-        players
+        selectedPlayers
       );
       this.router.navigate(['select-mode', 'match']);
 

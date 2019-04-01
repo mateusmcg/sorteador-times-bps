@@ -11,17 +11,10 @@ import { PlayersStateService } from '../players-state.service';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
-
-  // tslint:disable-next-line: no-output-on-prefix
-  @Output()
-  public onSortPlayers: EventEmitter<Player[]>;
-
   public players: Player[];
   public newPlayerName: string;
 
-  constructor(private playersStateService: PlayersStateService) {
-    this.onSortPlayers = new EventEmitter<Player[]>();
-  }
+  constructor(private playersStateService: PlayersStateService) {}
 
   public ngOnInit(): void {
     this.players = this.playersStateService.players;
@@ -39,8 +32,4 @@ export class PlayersComponent implements OnInit {
     } as Player);
   }
 
-  public sortPlayers(): void {
-    this.playersStateService.players = this.players;
-    this.onSortPlayers.emit(this.players.filter(p => p.isSelected));
-  }
 }

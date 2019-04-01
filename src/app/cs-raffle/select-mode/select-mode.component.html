@@ -1,20 +1,26 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start center" fxFlexFill>
+<div fxLayout="column" fxLayoutAlign="start center" fxLayoutAlign.xs="start center" fxLayoutAlign.sm="start center" fxFlexFill>
   <img
-    src="../../../assets/images/campeonato-2x2.jpg"
+    src="../../../assets/images/2x2.png"
     alt="2x2"
     (click)="mode2x2()"
     [routerLink]="['x2']"
   />
   <img
-    src="../../../assets/images/campeonato-3x3.jpg"
+    src="../../../assets/images/3x3.png"
     alt="3x3"
     (click)="mode3x3()"
     [routerLink]="['x3']"
   />
   <img
-    src="../../../assets/images/comp-gc.jpg"
+    src="../../../assets/images/compgc.png"
     alt="gc"
     (click)="modeGC()"
     [routerLink]="['gc']"
+  />
+  <img
+    src="../../../assets/images/compgc.png"
+    alt="gc"
+    (click)="modeGC()"
+    [routerLink]="['maps']"
   />
 </div>
