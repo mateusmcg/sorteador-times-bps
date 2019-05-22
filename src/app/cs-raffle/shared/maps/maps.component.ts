@@ -20,8 +20,12 @@ export class MapsComponent implements OnInit {
     this.mapsStateService.maps = this.maps;
   }
 
-  public onCheckedChange(evt: MatCheckboxChange, map: Map): void {
-    map.isSelected = evt.checked;
+  public onCheckedChange(evt: MatCheckboxChange): void {
+    evt.source.toggle();
+  }
+
+  public clickMap(map: Map) {
+    map.isSelected = !map.isSelected;
   }
 
   public addMap(): void {

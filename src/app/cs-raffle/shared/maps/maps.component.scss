@@ -1,11 +1,23 @@
 section {
-
   padding-left: 20px;
 
   mat-card {
     margin-bottom: 10px;
+    padding-bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+    ::ng-deep {
+      .mat-checkbox-inner-container {
+        height: 24px;
+        width: 24px;
+      }
+    }
   }
 
+  mat-card:hover {
+    opacity: 0.85;
+  }
 
   .title {
     padding-left: 10px;
